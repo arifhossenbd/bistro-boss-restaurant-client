@@ -87,14 +87,18 @@ const Footer = () => {
             });
         }
     };
+
+    const date = new Date().toLocaleString('en-us',{year:'numeric'})
+    
+
     return (
-        <div className=" bg-neutral text-white p-12">
+        <div className=" bg-neutral text-white px-12 pt-8">
             <div className="flex justify-between">
                 <div>
                     <img className="w-20" src={images.logo} alt="" />
                     <p>Bistro Boss Restaurant Industries Ltd.<br />Providing reliable tech since 1992</p>
                 </div>
-                <div className="divider divide-x-2 divide-white border h-36"></div>
+                <div className="divider divide-x-2 divide-white border h-24"></div>
                 <div>
                     <header className="footer-title">Social</header>
                     <div className="grid grid-flow-col gap-4">
@@ -110,7 +114,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <h2 className="text-center mt-12 border border-x-0 border-spacing-px-2 py-2 w-full">Copyright © 2023 - All right reserved by Bistro Boss Restaurant Industries Ltd</h2>
+            <h2 className="text-center w-full py-4">Copyright © {date} - All right reserved by Bistro Boss Restaurant Industries Ltd</h2>
         </div>
     );
 };

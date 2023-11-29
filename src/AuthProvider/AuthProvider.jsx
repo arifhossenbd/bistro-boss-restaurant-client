@@ -15,7 +15,7 @@ const AuthProvider = ({children}) => {
     const facebookProvider = new FacebookAuthProvider()
     const gitHubProvider = new GithubAuthProvider
     const axiosPublic = useAxiosPublic()
-
+    console.log(user);
     const createUser = (name, email, password) => {
         if(setLoading(true)){
             return <Loading/>

@@ -12,9 +12,11 @@ import Cart from "../Pages/Dashboard/Cart/Cart";
 import Admin from "../Pages/Dashboard/Admin/Admin";
 import AddItem from "../Pages/Dashboard/AddItem/AddItem";
 import ManageItem from "../Pages/Dashboard/ManageItem/ManageItem";
-import ManageOrder from "../Pages/Dashboard/ManageOrder/ManageOrder";
 import AllUser from "../Pages/Dashboard/AllUser/AllUser";
 import Contact from "../Pages/Dashboard/Contact/Contact";
+import ManageBooking from "../Pages/Dashboard/ManageBooking/ManageBooking";
+import AdminRoute from "./AdminRoute";
+import UpdateItem from "../Pages/Dashboard/UpdateItem/UpdateItem";
 
 const router = createBrowserRouter([
     {
@@ -24,10 +26,6 @@ const router = createBrowserRouter([
         {
             path: "/",
             element: <Home/>
-        },
-        {
-          path: "/menu",
-          element: <Menu/>
         },
         {
           path: "/order-food/:category",
@@ -51,26 +49,33 @@ const router = createBrowserRouter([
       path: "/dashboard",
       element: <PrivateRoute><Dashboard/></PrivateRoute>,
       children: [
+        // Admin only routes
         {
           path: "admin",
-          element: <Admin/>
+          element: <AdminRoute><Admin/></AdminRoute>
         },
         {
           path: "add-item",
-          element: <AddItem/>
+          element: <AdminRoute><AddItem/></AdminRoute>
         },
         {
           path: "manage-item",
-          element: <ManageItem/>
+          element: <AdminRoute><ManageItem/></AdminRoute>
         },
         {
-          path: "manage-order",
-          element: <ManageOrder/>
+          path: "updateItem/:id",
+          element: <AdminRoute><UpdateItem/></AdminRoute>,
+          loader: ({params}) => fetch(`http://localhost:5000/menu/${params.id}`)
+        },
+        {
+          path: "manage-booking",
+          element: <AdminRoute><ManageBooking/></AdminRoute>
         },
         {
           path: "all-users",
-          element: <AllUser/>
+          element: <AdminRoute><AllUser/></AdminRoute>
         },
+        // Normal Route
         {
           path: "menu",
           element: <Menu/>

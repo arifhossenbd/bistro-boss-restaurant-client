@@ -5,14 +5,13 @@ import useCart from "../../../Hooks/useCart";
 import Swal from "sweetalert2";
 
 const Navbar = () => {
-    const {user, logOut, loading} = useAuth(null)
+    const {user, logOut} = useAuth()
     const [carts] = useCart()
     const totalPrice = carts.reduce((total, items) => total + items.price, 0)
     const handleLogOut = () => {
         logOut()
         .then((res) => {
             const logOut = res.user;
-            loading(true)
             Swal.fire({
                 title: "Good job!",
                 text: "You have logged out successfully!",

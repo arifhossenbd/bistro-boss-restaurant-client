@@ -24,7 +24,7 @@ const Registration = () => {
     const navigate = useNavigate();
     const from = location.state?.from?.pathname || "/";
 
-    const handleFileChange = (event) => {
+    const handleFile = (event) => {
         const files = event.target.files;
         if (files.length > 0 && files[0].type.startsWith("image/")) {
             const url = URL.createObjectURL(files[0]);
@@ -41,11 +41,11 @@ const Registration = () => {
 
     const onSubmit = (data) => {
         console.log(data);
-        createUser(data.email, data.name, data.password)
+        createUser(data.email, data.password)
             .then((result) => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
-                updateUserProfile(data.name, data.email, fileUrl)
+                updateUserProfile(data.email, fileUrl)
                     .then(() => {
                         const userInfo = {
                             displayName: data.name,
@@ -108,7 +108,7 @@ const Registration = () => {
                                     name="photo"
                                     id="photo"
                                     accept="image/*"
-                                    onChange={handleFileChange}
+                                    onChange={handleFile}
                                 />
                                 {errors.photoURL && <span className="text-red-600">Photo is required</span>}
                                 {fileUrl && (

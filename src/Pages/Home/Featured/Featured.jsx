@@ -4,12 +4,12 @@ import { images } from "../../../Constant";
 
 const Featured = () => {
     return (
-        <div style={{backgroundImage: `url(${images.featured})`}} className="p-4 bg-fixed mb-12 text-gray-200">
+        <div style={{backgroundImage: `url(${images.featured})`}} className="p-4 bg-fixed my-12 text-gray-200">
             <SectionTitles
                 subHeading="Check it out"
                 heading="FROM OUR MENU"
             />
-            <div className="w-9/12 mx-auto flex gap-5 pb-12">
+            <div className="w-9/12 mx-auto flex gap-5 my-12">
                 <img className="w-1/2" src={images.featured} alt="" />
                 <div className="text-base-100">
                     <h2 className="text-xl">March 20, 2023</h2>

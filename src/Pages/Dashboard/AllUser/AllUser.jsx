@@ -76,14 +76,14 @@ const AllUser = () => {
     return (
         <div className="px-4">
             <div className=" bg-gray-100 shadow-lg rounded-lg">
-                <div className="flex justify-between text-center items-center">
+                <div className="flex justify-between text-center items-center px-8 pt-4">
                     <h2 className="text-3xl text-info">Total Users:  {users.length}</h2>
                     <div><button className="bg-yellow-600 text-white text-lg rounded-lg px-4 py-2">Pay</button></div>
                 </div>
                 <div className="overflow-x-auto pt-8">
                     <table className="table table-zebra">
                         <thead>
-                            <tr className="text-center text-lg text-white bg-yellow-500 rounded-b-sm">
+                            <tr className="text-lg text-center text-white bg-yellow-500 rounded-b-sm">
                                 <th></th>
                                 <th>IMAGE</th>
                                 <th>NAME</th>
@@ -92,10 +92,10 @@ const AllUser = () => {
                                 <th>ACTION</th>
                             </tr>
                         </thead>
-                        <tbody className="">
+                        <tbody className="p-4">
                             {
                                 users?.map((user, index) =>
-                                    <tr key={user._id}>
+                                    <tr className="text-center" key={user._id}>
                                         <td>{index + 1}</td>
                                         <td>
                                             <img className="avatar rounded-md" src={user.photoURL} alt="" />
