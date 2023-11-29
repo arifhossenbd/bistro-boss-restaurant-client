@@ -17,6 +17,7 @@ import Contact from "../Pages/Dashboard/Contact/Contact";
 import ManageBooking from "../Pages/Dashboard/ManageBooking/ManageBooking";
 import AdminRoute from "./AdminRoute";
 import UpdateItem from "../Pages/Dashboard/UpdateItem/UpdateItem";
+import Payment from "../Pages/Dashboard/Payment/Payment";
 
 const router = createBrowserRouter([
     {
@@ -87,6 +88,10 @@ const router = createBrowserRouter([
         {
           path: "contact",
           element: <Contact/>
+        },
+        {
+          path: "payment",
+          element: <Payment/>
         }
 
       ]

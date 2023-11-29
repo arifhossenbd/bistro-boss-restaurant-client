@@ -1,4 +1,5 @@
 import { FaAd, FaCalendar, FaHome, FaList, FaShoppingCart, FaUserFriends } from "react-icons/fa";
+import { HiMiniShoppingBag } from "react-icons/hi2";
 import { FcMenu } from "react-icons/fc";
 import { TbBrandBooking } from "react-icons/tb";
 import { IoMdMail } from "react-icons/io";
@@ -74,6 +75,9 @@ const Dashboard = () => {
                         </li>
                         <li>
                             <Link to='/dashboard/menu'><FcMenu /> Menu</Link>
+                        </li>
+                        <li>
+                            <Link to='/order-food/dessert'><HiMiniShoppingBag /> Order Food</Link>
                         </li>
                         <li>
                             <Link to="/dashboard/carts"><FaShoppingCart /> My Cart ({cart.length})</Link>
